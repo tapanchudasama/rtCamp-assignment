@@ -44,3 +44,69 @@ function codex_book_init()
     register_post_type($type, $args);
 }
 add_action('init', 'codex_book_init');
+
+function my_rewrite_flush()
+{
+    codex_book_init();
+    flush_rewrite_rules();
+}
+register_activation_hook(__FILE__, 'my_rewrite_flush');
+
+// Callback for Metabox
+function meta_information($object)
+{
+    ?>
+<div>
+    <label for="meta-box-author">Author</label>
+    <input name="meta-box-author" type="text"
+        value="<?php echo get_post_meta($object->ID, "meta-box-author", true); ?>">
+    <br>
+    <label for="meta-box-price">Price</label>
+    <input name="meta-box-price" type="number" min='1' , step="any"
+        value="<?php echo get_post_meta($object->ID, "meta-box-price", true); ?>">
+    <br>
+    <label for="meta-box-edition">Edition</label>
+    <input name="meta-box-edition" type="number"
+        value="<?php echo get_post_meta($object->ID, "meta-box-edition", true); ?>">
+    <br>
+    <label for="meta-box-publisher">Publisher</label>
+    <input name="meta-box-publisher" type="text"
+        value="<?php echo get_post_meta($object->ID, "meta-box-publisher", true); ?>">
+    <br>
+</div>
+<?php
+}
+
+// Save data of Metabox in database
+function save_custom_metabox($post_id, $post)
+{
+    if (!current_user_can("edit_post", $post_id))
+        return $post_id;
+    if (defined("DOING_AUTOSAVE") && DOING_AUTOSAVE)
+        return $post_id;
+    $slug = "book";
+    if ($slug != $post->post_type) {
+        return $post_id;
+    }
+    $fields = ['meta-box-author', 'meta-box-price', 'meta-box-edition', 'meta-box-publisher'];
+    foreach ($fields as $field) {
+        if (array_key_exists($field, $_POST)) {
+            update_post_meta($post_id, $field, sanitize_text_field($_POST[$field]));
+        }
+    }
+}
+add_action("save_post", "save_custom_metabox", 1, 2);
+
+// Add Custom Metabox
+function add_custom_metaboxes()
+{
+    add_meta_box(
+        'custom_metabox',
+        'Book Information',
+        'meta_information',
+        'book',
+        'side',
+        'high'
+    );
+}
+add_action("add_meta_boxes", "add_custom_metaboxes");
