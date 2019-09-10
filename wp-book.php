@@ -1,5 +1,5 @@
 <?php
-include 'options.php';
+
 /**
  * Plugin Name: WP-Book
  * Plugin URI: http://localhost/testsite/
