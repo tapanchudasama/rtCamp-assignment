@@ -110,3 +110,31 @@ function add_custom_metaboxes()
     );
 }
 add_action("add_meta_boxes", "add_custom_metaboxes");
+
+// Register custom hierarchial taxonomy Book category
+add_action('init', 'register_taxonomy_book_category');
+function register_taxonomy_book_category()
+{
+    $labels = [
+        'name'              => _x('Book Category', 'taxonomy general name'),
+        'singular_name'     => _x('Book Category', 'taxonomy singular name'),
+        'search_items'      => __('Search Categories'),
+        'all_items'         => __('All Categories'),
+        'parent_item'       => __('Parent Category'),
+        'parent_item_colon' => __('Parent Category:'),
+        'edit_item'         => __('Edit Category'),
+        'update_item'       => __('Update Category'),
+        'add_new_item'      => __('Add New Category'),
+        'new_item_name'     => __('New Category Name'),
+        'menu_name'         => __('Book Category'),
+    ];
+    $args = [
+        'hierarchical'      => true, // make it hierarchical (like categories)
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => ['slug' => 'book_category'],
+    ];
+    register_taxonomy('book_category', array('book'), $args);
+}
