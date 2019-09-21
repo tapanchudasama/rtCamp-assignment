@@ -111,7 +111,7 @@ function designfly_widgets_init() {
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'after_title'   => '<hr style="margin-bottom: -2px; width: 270px; margin-left: -0px"></h2>',
 	) );
 }
 add_action( 'widgets_init', 'designfly_widgets_init' );
@@ -179,3 +179,14 @@ function special_nav_class ($classes, $item) {
     return $classes;
 }
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+function new_excerpt_more($more) {
+    return '';
+}
+add_filter('excerpt_more', 'new_excerpt_more', 21 );
+
+function the_excerpt_more_link( $excerpt ){
+    $post = get_post();
+    $excerpt = ' <a class="anchor" href="'. get_permalink($post->ID) . '">Read More</a>.';
+    return $excerpt;
+}
+add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );

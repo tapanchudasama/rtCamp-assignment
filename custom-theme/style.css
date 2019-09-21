@@ -1015,6 +1015,7 @@ object {
 	padding-left: 75px;
 	margin-right: auto;
 	margin-left: auto;
+	width: 70%;
 }
 @media (min-width: 768px) {
 	.container {
@@ -1119,6 +1120,9 @@ object {
 	height: 50px;
 	background-color: #222222;
 }
+.post-title:hover{
+	background-color: #ef4634;
+}
 .post-title-text {
 	font-family: "Open Sans", serif;
 	size: 25px;
@@ -1134,8 +1138,133 @@ object {
 	height: 50px;
 	margin-top: -0px;
 }
+
 .image {
+	margin-top: 20px;
 	width: 220px;
 	height: 153px;
 	border-radius: 10px;
+	margin-left: -50px;
+}
+.excerpt{
+	font-family: "Open Sans", serif;
+	font-size: 14px;
+	color: #62585f;
+	line-height: 21px;
+	width: 620px;
+}
+.read-more{
+	font-family: "Open Sans", serif;
+	font-size: 14px;
+	color: #ef4634;
+	text-decoration: none;
+}
+.read-more:hover{
+	text-decoration: underline;
+}
+#secondary{
+	float: left;
+	margin-right: -100%;
+	max-width: 413px;
+	position: relative;
+	width: 29.4118%;
+	margin-top: -96px;
+}
+.content-area1{
+	display: block;
+	float: left;
+	width: 70.5882%;
+	margin-top: -5%;
+}
+.widget-title:hover{
+	color:#ef4634;
+}
+#secondary ul{
+	font-family: "Open Sans Semibold";
+	font-size: 13px;
+	color: #62585f;
+	list-style: none;
+	margin: 0;
+}
+#secondary a:hover{
+	color: #ef4634;
+}
+h2.widget-title{
+	font-family: "Open Sans";
+	font-size: 25px;
+	color: #62585f;
+	box-shadow: 2px solid #ffffff;
+	font-weight: lighter;
+}
+.widget_list_books ul li a{
+	text-decoration: none;
+	color: #62585f;
+}
+.widget_list_books ul li{
+	padding: 5px;
+	margin: auto;
+}
+.widget_list_categories_widget ul li{
+	padding: 5px;
+}
+.widget_list_categories_widget ul li a{
+	text-decoration: none;
+	color: #62585f;
+}
+.widget_recent_entries ul li{
+	padding: 5px;
+}
+.widget_recent_entries ul li a{
+	text-decoration: none;
+	color: #62585f;
+}
+.widget_recent_comments ul li{
+	padding: 5px;
+}
+.widget_recent_comments ul li a{
+	text-decoration: none;
+	color: #62585f;
+}
+.widget_archive ul li{
+	padding: 5px;
+}
+.widget_archive ul li a{
+	text-decoration: none;
+	color: #62585f;
+}
+
+.content-area2 .anchor{
+	text-decoration: none;
+	color: #ef4634;
+	font-size: 14px;
+	font-family: "Open Sans";
+}
+.content-area2 .anchor:hover{
+	text-decoration: underline;
+	color: #ef4634;
+}
+.postdate {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+.month, .day, .year {
+	position: absolute;
+}
+.day {
+	text-justify: auto;
+	text-align: center;
+	top: -14px;
+	left: -14px;
+	font-size: 25px;
+	width: 32px;
+	height: 25px;
+}
+.month {
+	top: 16px;
+	left: -11px;
+	width: 32px;
+	height: 14px;
+	text-transform: uppercase;
 }
