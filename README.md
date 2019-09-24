@@ -1,6 +1,6 @@
 # rtCamp-assignment
 
-# custom-plugin: Things implemented-
+# custom-plugin: Things implemented
 1) Custom Post type 'Book' created (wp-book.php)
 2) Custom hierarchial taxonomy 'Book Category' created (wp-book.php)
 3) Custom non-hierarchial taxonomy 'Book Tags' created (wp-book.php)
