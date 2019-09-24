@@ -16,6 +16,7 @@ get_header();
                 <div class="content-area1">
                     <br>
                     <br>
+
                     <?php
                     while ( have_posts() ) :
                         the_post();
@@ -27,7 +28,7 @@ get_header();
                         the_content();
                         echo "</div>";
                         $post_ID=get_the_ID();
-                        $tags = get_the_tags($post_ID);
+                        $tags = get_the_terms($post_ID,'book_category');
 
                         if(!empty($tags)){
                             echo "<span class='tags-span'>TAGS:</span> ";
@@ -36,16 +37,22 @@ get_header();
                             }
                         }
                         ?>
+                        <div class="author-info">
+                            <p>Written by:
+                                <?php the_author_posts_link(); ?></p>
+                        </div>
                     <?php
                         // If comments are open or we have at least one comment, load up the comment template.
                         if ( comments_open() || get_comments_number() ) :
                             comments_template();
                         endif;
+
                     endwhile; // End of the loop.
                     ?>
                     <hr class="hr-post">
                 </div>
             </div>
+
         </main><!-- #main -->
     </div><!-- #primary -->
 

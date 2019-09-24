@@ -1,9 +1,6 @@
-/*!
+/*
 Theme Name: custom-theme
 Author: Tapan
-Version: 1.0.0
-Text Domain: designfly
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
 html {
 	line-height: 1.15; /* 1 */
@@ -996,6 +993,7 @@ object {
 	color: #62585f;
 	box-shadow: 2px #ffffff;
 	margin-bottom: -5px;
+	margin-top: 10%;
 }
 .headliner-button{
 	float: right;
@@ -1015,7 +1013,6 @@ object {
 	padding-left: 75px;
 	margin-right: auto;
 	margin-left: auto;
-	width: 70%;
 }
 @media (min-width: 768px) {
 	.container {
@@ -1141,8 +1138,8 @@ object {
 
 .image {
 	margin-top: 20px;
-	width: 220px;
-	height: 153px;
+	width: 620px;
+	height: 320px;
 	border-radius: 10px;
 	margin-left: -50px;
 }
@@ -1162,22 +1159,26 @@ object {
 .read-more:hover{
 	text-decoration: underline;
 }
-#secondary{
-	float: left;
-	margin-right: -100%;
-	max-width: 413px;
-	position: relative;
-	width: 29.4118%;
-	margin-top: -96px;
-}
+
 .content-area1{
 	display: block;
 	float: left;
-	width: 70.5882%;
+	width: 70%;
 	margin-top: -5%;
 }
 .widget-title:hover{
 	color:#ef4634;
+}
+#secondary{
+	float: left;
+	margin-right: -100%;
+	max-width: 413px;
+	padding: 1em 0 2em;
+	width: 30%;
+	position: static !important;
+}
+.widget {
+	padding-bottom: 3em;
 }
 #secondary ul{
 	font-family: "Open Sans Semibold";
@@ -1190,7 +1191,7 @@ object {
 	color: #ef4634;
 }
 h2.widget-title{
-	font-family: "Open Sans";
+	font-family: "Open Sans", serif;
 	font-size: 25px;
 	color: #62585f;
 	box-shadow: 2px solid #ffffff;
@@ -1237,7 +1238,7 @@ h2.widget-title{
 	text-decoration: none;
 	color: #ef4634;
 	font-size: 14px;
-	font-family: "Open Sans";
+	font-family: "Open Sans", serif;
 }
 .content-area2 .anchor:hover{
 	text-decoration: underline;
@@ -1267,4 +1268,153 @@ h2.widget-title{
 	width: 32px;
 	height: 14px;
 	text-transform: uppercase;
+}
+.author-info{
+	font-family: "Open Sans", serif;
+	color: #62585f;
+}
+.span{
+	color: #ef4634;
+}
+.post-content{
+	font-family: "Open Sans", serif;
+	font-size: 14px;
+	color: #62585f;
+	width: 620px;
+	box-shadow: 2px #ffffff;
+}
+.hr-post{
+	width: 620px;
+	text-align: left;
+	margin-right: 100%;
+	border: 1px solid #62585f;
+}
+.content-area{
+	width: 100%;
+}
+.tags-span{
+	font-family: "Open Sans";
+	font-size:13px;
+	color: #62585f;
+}
+a.tags-link{
+	text-decoration: none;
+	font-family: "Open Sans", serif;
+	font-size:13px;
+	color: #ef4634;
+}
+a.tags-link:hover{
+	text-decoration: underline;
+}
+.pagination{
+	text-align: center;
+	margin-left: 50%;
+}
+.pagination a{
+	color: #222222;
+}
+.page-numbers a.active {
+	background-color: #ef4634;
+	color: #ffffff;
+}
+
+.page-numbers{
+	font-family: "Open Sans Semibold";
+	font-size: 16px;;
+	color: #222222;
+	padding: 10px;
+	margin: auto;
+	text-decoration: none;
+}
+.page-numbers:hover{
+	color: #ffffff;
+	background-color: #ef4634;
+	border-radius: 3px;
+	width: 30px;
+	height: 30px;
+}
+.widget hr{
+	border: 1px solid #62585f;
+}
+.posts-list li a{
+	text-decoration: none;
+	color: #62585f;
+	font-family: "Open Sans Semibold", serif;
+	font-size: 13px;
+}
+.posts-list li a:hover{
+	color: #ef4634;
+}
+.posts-list li{
+	list-style: symbols();
+}
+h2.entry-title{
+	font-family: "Open Sans Light", serif;
+	color: #62585f;
+	box-shadow: 2px #ffffff;
+}
+a{
+	text-decoration: none;
+	color: #62585f;
+}
+h1.page-title{
+	font-family: "Open Sans Light", serif;
+	color: #62585f;
+	box-shadow: 2px #ffffff;
+}
+div.entry-meta{
+	font-family: "Open Sans", serif;
+	color: #ef4634;
+}
+div.entry-content{
+	font-family: "Open Sans", serif;
+	color: #62585f;
+}
+footer.entry-footer{
+	font-family: "Open Sans", serif;
+	color: #62585f;
+}
+footer.entry-footer span a{
+	padding: 5px;
+	color: #ef4634;
+}
+footer.entry-footer .comments-link{
+	display: block;
+	margin-left: -0.5%;
+}
+.tagcloud a{
+	margin-top: 50px;
+	display:block;
+	float:left;
+	padding:4px 10px;
+	margin-right:7px;
+	margin-bottom:7px;
+	background:#EEE;
+	color:#666;
+	font-size:11px;
+	font-weight:bold;
+	text-transform:lowercase;
+	text-shadow:1px 1px 1px #FFF;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #CCC;
+	text-decoration:none;
+}
+.tagcloud a:hover{
+	background:#F3F3F3;
+	color:#000;
+	text-decoration:none;
+}
+.portfolio-buttons{
+	font-family: "Open Sans";
+	font-size: 16px;
+	padding: 10px;
+	color: #ffffff;
+	background-color: #222222;
+	border-radius: 5px;
+	margin-top: -40px;
+}
+.portfolio-buttons:hover{
+	background-color: #ef4634;
 }

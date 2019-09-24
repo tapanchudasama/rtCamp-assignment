@@ -18,44 +18,12 @@ get_header();
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
-        <div class="feature-strip1">
-            <div class="feature-strip">
-                <div style="float:left; width:10%; margin-top:25px; padding-left:30px;">
-                    <img src="http://localhost/testsite/wp-content/uploads/2019/09/feature-icons-e1568384808540.png">
-                </div>
-                <div style="float:left; width: 20%">
-                    <p class="heading2">Advertising</p>
-                    <p class="paragraph">
-                        Lorem ipsum dolor sit amet. Modi. qui...
-                    </p>
-                </div>
+        <?php get_template_part('template-parts/feature-strip', get_post_type()) ?>
 
-                <div style="float:left; width:10%; margin-top:25px;padding-left:30px;">
-                    <img src="http://localhost/testsite/wp-content/uploads/2019/09/feature-icons-1-e1568386007173.png">
-                </div>
-                <div style="float:left; width:20%">
-                    <p class="heading2">Multimedia</p>
-                    <p class="paragraph">
-                        Lorem ipsum dolor sit amet. Modi. qui...
-                    </p>
-                </div>
-
-                <div style="float:left; width:10%; margin-top:25px;padding-left:30px;">
-                    <img src="http://localhost/testsite/wp-content/uploads/2019/09/feature-icons-2-e1568386156700.png">
-                </div>
-                <div style="float:left; width:20%;">
-                    <p class="heading2">Photography</p>
-                    <p class="paragraph">
-                        Lorem ipsum dolor sit amet. Modi. qui...
-                    </p>
-                </div>
-
-            </div>
-        </div>
-        <div class="container">
-            <p class="headliner-text">LET'S BLOG</p>
-            <hr style="width: 620px;float: left">
+        <div class="container"><!--Container Starts-->
             <div class="content-area1">
+                <p class="headliner-text">LET'S BLOG</p>
+                <hr class="hr-post">
             <br>
             <br>
             <?php
@@ -64,9 +32,8 @@ get_header();
 
 
             // General arguments
-
             $Posts = new WP_Query(array(
-                'post_type' => 'book', // Default or custom post type
+                //'post_type' => 'book', // Default or custom post type
                 'posts_per_page' => 3, // Max number of posts per page
                 'paged' => $CurrentPage
             ));
@@ -75,8 +42,11 @@ get_header();
 
             if ($Posts->have_posts()) :
                 while ($Posts->have_posts()) :
+                    $Posts->the_post();
+                    $url=get_permalink($Posts->ID);
+                    echo "<a href='$url'>";
                     echo "<div class='post-title'>";
-                    $Posts->the_post();?>
+                    ?>
                     <div class="postdate">
                         <div class="post-title-text day"><?php echo get_the_date(j) ?></div>
                         <div class="post-title-text month"><?php echo get_the_date('M') ?></div>
@@ -85,27 +55,33 @@ get_header();
                     echo "<p class='vl'></p>";
                     the_title('<p class="post-title-text">','</p>');
                     echo "</div>";
+                    echo "</a>";
                     echo "<div class='content-area2'>";
-                    $image = get_the_post_thumbnail_url();
-                    echo "<img class='image' src='$image'>";
-                    $excerpt=get_the_excerpt();
-                    echo "<p class='excerpt'>".$excerpt."</p>";
-                    echo "<p class='read-more'>".the_excerpt()."</p>";
+                            echo "<div class='thumbnail'>";
+                                $image = get_the_post_thumbnail_url();
+                                echo "<img class='image' src='$image'>";
+                            echo "</div>";
+                            echo "<div class='post-excerpt'>";
+                                $excerpt=get_the_excerpt();
+                                echo "<p class='excerpt'>".$excerpt."</p>";
+                                echo "<p class='read-more'>".the_excerpt()."</p>";
+                            echo "</div>";
                     echo "</div>";
                 endwhile;
             endif;
 
 
             // Bottom pagination (pagination arguments)
-
+            echo "<div class='pagination'>";
             echo paginate_links(array(
                 'total' => $Posts->max_num_pages,
                 'prev_text' => __('<'),
                 'next_text' => __('>')
             ));
+            echo "</div>";
             ?>
             </div>
-        </div>
+        </div><!--Container ends-->
 
 
     </main><!-- #main -->

@@ -15,8 +15,8 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main">
             <div class="slider">
                 <div class="slider-text"><p>Gearing up the ideas</p></div>
                 <div class="slider-arrow1">
@@ -46,8 +46,8 @@ get_header();
 
             </div>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+        </main><!-- #main -->
+    </div><!-- #primary -->
 
 <?php
 get_footer();
