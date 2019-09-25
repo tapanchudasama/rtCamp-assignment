@@ -1,6 +1,6 @@
 # rtCamp-assignment
 
-Please visit the site [yelpcampsite.herokuapp.com](yelpcampsite.wordpress.com) which I have developed as a part of a course I took on udemy.
+Please visit the site [www.yelpcampsite.herokuapp.com](yelpcampsite.wordpress.com) which I have developed as a part of a course I took on udemy.
 
 # custom-plugin: Things implemented
 1) Custom Post type 'Book' created (wp-book.php)
