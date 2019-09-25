@@ -1,5 +1,7 @@
 # rtCamp-assignment
 
+Please visit the site yelpcampsite.wordpress.com which I have developed as a part of a course I took on udemy.
+
 # custom-plugin: Things implemented
 1) Custom Post type 'Book' created (wp-book.php)
 2) Custom hierarchial taxonomy 'Book Category' created (wp-book.php)
