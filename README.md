@@ -21,3 +21,27 @@ Please visit the site [yelpcampsite.herokuapp.com](https://yelpcampsite.herokuap
 6) Date/Month/Year archive page that displays posts by date/month/year 
 7) Category archive page that displays all posts by category (category.php)
 8) Author archive page that displays author information like website and name of author (author.php)
+
+# Home Page
+![image](/custom-theme/Home.png)
+
+# Single Post Page
+![image](/custom-theme/Single.png)
+
+# Portfolio Page
+![image](/custom-theme/Portfolio.png)
+
+# Blog Page
+![image](/custom-theme/Blog.png)
+
+# Tag Archive Page
+![image](/custom-theme/Tag-archive.png)
+
+# Category Archive Page
+![image](/custom-theme/Category-archive.png)
+
+# Day/Month/Year Archive Page
+![image](/custom-theme/Day-archive.png)
+
+# Author Archive Page
+![image](/custom-theme/Author-archive.png)
