@@ -9,8 +9,9 @@
  * @author   Tapan Chudasama <tapan9740@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     http://localhost/testsite/
+ * Description: rtCamp Assignment Plugin
  * Version: 1.0
- * Text Domain: wp-book
+ * Text Domain: custom-plugin
  **/
 
 class List_Books extends WP_Widget

@@ -11,7 +11,7 @@
  * @link     http://localhost/testsite/
  * Description: rtCamp Assignment Plugin
  * Version: 1.0
- * Text Domain: wp-book
+ * Text Domain: custom-plugin
  * Author: Tapan Chudasama
  **/
 
