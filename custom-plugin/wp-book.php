@@ -1,17 +1,26 @@
 <?php
-
 /**
  * Plugin Name: WP-Book
- * Plugin URI: http://localhost/testsite/
+ *
+ * PHP Version 7
+ *
+ * @category Plugin
+ * @package  Wpbook
+ * @author   Tapan Chudasama <tapan9740@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     http://localhost/testsite/
  * Description: rtCamp Assignment Plugin
  * Version: 1.0
- * Text Domain: my-plugin
+ * Text Domain: wp-book
  * Author: Tapan Chudasama
- * Author URI: http://inflamesite.wordpress.com
- */
+ **/
 
-// Register custom post type Book
-function codex_book_init()
+/**
+ * Register custom post type Book
+ *
+ * @return void
+ **/
+function Codex_Book_init()
 {
     $type = 'book';
     $labels = array(
@@ -39,21 +48,38 @@ function codex_book_init()
         'capability_type'    => 'post',
         'has_archive'        => true,
         'menu_position'      => 5,
-        'supports'           => array('title', 'editor', 'author', 'thumbnail'),
+        'supports'           => array(
+            'title',
+            'editor',
+            'author',
+            'comments',
+            'thumbnail'
+        ),
     );
     register_post_type($type, $args);
 }
-add_action('init', 'codex_book_init');
+add_action('init', 'Codex_Book_init');
 
-function my_rewrite_flush()
+/**
+ * Rewrite Flush function
+ *
+ * @return void
+ **/
+function My_Rewrite_flush()
 {
-    codex_book_init();
+    Codex_Book_init();
     flush_rewrite_rules();
 }
-register_activation_hook(__FILE__, 'my_rewrite_flush');
+register_activation_hook(__FILE__, 'My_Rewrite_flush');
 
-// Callback for Metabox
-function meta_information($object)
+/**
+ * Callback for Metabox
+ *
+ * @param object $object Object
+ *
+ * @return void
+ */
+function Meta_information($object)
 {
     ?>
 <div>
@@ -70,35 +96,53 @@ function meta_information($object)
         value="<?php echo get_post_meta($object->ID, "meta-box-edition", true); ?>">
     <br>
     <label for="meta-box-publisher">Publisher</label>
-    <input name="meta-box-publisher" type="text"
-        value="<?php echo get_post_meta($object->ID, "meta-box-publisher", true); ?>">
+    <input name="meta-box-publisher" type="text" value="
+        <?php echo get_post_meta($object->ID, "meta-box-publisher", true); ?>">
     <br>
 </div>
-<?php
+    <?php
 }
 
-// Save data of Metabox in database
-function save_custom_metabox($post_id, $post)
+/**
+ * Save custom metabox
+ *
+ * @param int $post_id Post ID
+ * @param int $post    Post
+ *
+ * @return int
+ */
+function Save_Custom_metabox($post_id, $post)
 {
-    if (!current_user_can("edit_post", $post_id))
-        return $post_id;
-    if (defined("DOING_AUTOSAVE") && DOING_AUTOSAVE)
-        return $post_id;
-    $slug = "book";
-    if ($slug != $post->post_type) {
+    if (!current_user_can("edit_post", $post_id)) {
         return $post_id;
     }
-    $fields = ['meta-box-author', 'meta-box-price', 'meta-box-edition', 'meta-box-publisher'];
+    if (defined("DOING_AUTOSAVE") && DOING_AUTOSAVE) {
+        return $post_id;
+    }
+    $slug = "book";
+    if ($slug != $post->book) {
+        return $post_id;
+    }
+    $fields = [
+        'meta-box-author',
+        'meta-box-price',
+        'meta-box-edition',
+        'meta-box-publisher'
+    ];
     foreach ($fields as $field) {
         if (array_key_exists($field, $_POST)) {
             update_post_meta($post_id, $field, sanitize_text_field($_POST[$field]));
         }
     }
 }
-add_action("save_post", "save_custom_metabox", 1, 2);
+add_action("save_post", "Save_Custom_metabox", 1, 2);
 
-// Add Custom Metabox
-function add_custom_metaboxes()
+/**
+ * Add Custom Metabox
+ *
+ * @return void
+ **/
+function Add_Custom_metaboxes()
 {
     add_meta_box(
         'custom_metabox',
@@ -109,11 +153,14 @@ function add_custom_metaboxes()
         'high'
     );
 }
-add_action("add_meta_boxes", "add_custom_metaboxes");
+add_action("add_meta_boxes", "Add_Custom_metaboxes");
 
-// Register custom hierarchial taxonomy Book category
-add_action('init', 'register_taxonomy_book_category');
-function register_taxonomy_book_category()
+/**
+ * Register custom hierarchical taxonomy Book category
+ *
+ * @return void
+ **/
+function Register_Taxonomy_Book_category()
 {
     $labels = [
         'name'              => _x('Book Category', 'taxonomy general name'),
@@ -138,12 +185,15 @@ function register_taxonomy_book_category()
     ];
     register_taxonomy('book_category', array('book'), $args);
 }
+add_action('init', 'Register_Taxonomy_Book_category');
 
-add_action('init', 'create_book_taxonomies', 0);
-
-function create_book_taxonomies()
+/**
+ * Register custom non hierarchical taxonomy Book tags
+ *
+ * @return void
+ **/
+function Create_Book_taxonomies()
 {
-    // Add new taxonomy, NOT hierarchical (like tags)
     $labels = array(
         'name'                       => _x('Book Tags', 'taxonomy general name'),
         'singular_name'              => _x('Book Tag', 'taxonomy singular name'),
@@ -174,3 +224,4 @@ function create_book_taxonomies()
     );
     register_taxonomy('book_tag', 'book', $args);
 }
+add_action('init', 'Create_Book_taxonomies', 0);
