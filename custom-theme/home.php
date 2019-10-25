@@ -20,12 +20,12 @@ get_header();
 			<div class="slider">
 				<div class="slider-text"><p>Gearing up the ideas</p></div>
 				<div class="slider-arrow1">
-<!--    Change web address                -->
-					<img src="http://54.158.208.167/wp-content/uploads/2019/09/slider-arrows-e1569039346737.png" alt="">
+					<!--    Change web address                -->
+					<img src="http://3.84.204.21/wp-content/uploads/2019/09/slider-arrows-e1569039346737.png" alt="">
 				</div>
 				<div class="slider-arrow2">
-<!--    Change Web Address                -->
-					<img src="http://54.158.208.167/wp-content/uploads/2019/09/slider-arrows-1-e1569039369975.png" alt="">
+					<!--    Change Web Address                -->
+					<img src="http://3.84.204.21/wp-content/uploads/2019/09/slider-arrows-1-e1569039369975.png" alt="">
 				</div>
 				<div class="slider-text2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium eaque et iusto natus nostrum omnis quia quo.</div>
 			</div>
@@ -34,8 +34,8 @@ get_header();
 			<div class="container">
 				<div>
 					<p class="headliner-text">D'SIGN IS THE SOUL</p>
-<!--    Change web address -->
-					<a href="http://54.158.208.167/portfolio/"><button class="headliner-button" >view more</button></a>
+					<!--    Change web address -->
+					<a href="http://3.84.204.21/portfolio/"><button class="headliner-button" >view more</button></a>
 				</div>
 				<hr style="border: 1px solid #62585f">
 				<div class="grid-container">
@@ -57,7 +57,6 @@ get_header();
 							}
 						endwhile;
 					endif;
-
 					?>
 
 				</div>
@@ -77,7 +76,7 @@ get_header();
 				echo wp_kses(
 					paginate_links(
 						array(
-							'total'     => $posts_all->max_num_pages,
+							'total'     => $myposts->max_num_pages,
 							'prev_text' => __( '<' ),
 							'next_text' => __( '>' ),
 						)

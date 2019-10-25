@@ -29,7 +29,7 @@
 				Tel:123 456 7890 Fax:123 456789<br>
 				Email: <a href="mailto:contactus@dsignfly.com">contactus@dsignfly.com</a></p>
 <!--     Change web address       -->
-			<img src="http://54.158.208.167/wp-content/uploads/2019/09/social-e1569043310326.png" alt="social-media-links">
+			<img src="http://3.84.204.21/wp-content/uploads/2019/09/social-e1569043310326.png" alt="social-media-links">
 		</div>
 	</div>
 	<hr style="border: 1px solid #62585f;margin-top: 30px">

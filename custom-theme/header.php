@@ -69,7 +69,7 @@
 				</label>
 <!--                Change web address here -->
 				<input id="search-image" type="image"
-					src="http://54.158.208.167/wp-content/uploads/2019/09/search-icon-e1568373858382.png" alt="">
+					src="http://3.84.204.21/wp-content/uploads/2019/09/search-icon-e1568373858382.png" alt="">
 			</div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
