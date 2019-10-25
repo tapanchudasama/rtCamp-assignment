@@ -1,5 +1,6 @@
 # rtCamp-assignment
 
+Blog Live Demo: http://3.84.204.21
 Please visit the site [yelpcampsite.herokuapp.com](https://yelpcampsite.herokuapp.com) which I have developed as a part of a course I took on udemy.
 
 # custom-plugin: Things implemented
