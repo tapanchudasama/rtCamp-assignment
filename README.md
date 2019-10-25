@@ -17,7 +17,7 @@ Please visit the site [yelpcampsite.herokuapp.com](https://yelpcampsite.herokuap
 2) Blog page that displays all blog posts made by user with pagination (page.php)
 3) Portfolio page that displays all thumbnails of posts under custom post type with pagination (book in this case) (archive-book.php)
 4) Single Post Page that displays the complete content of a post along with the tags and author of the post (single.php)
-5) 4) Single Post Page that displays the complete content of a custom post type along with the tags and author of the post (single-book.php)
+5) Single Post Page that displays the complete content of a custom post type along with the tags and author of the post (single-book.php)
 5) Tag archive page that displays all tags (tag.php)
 6) Date/Month/Year archive page that displays posts by date/month/year (archive.php)
 7) Category archive page that displays all posts by category (category.php)
