@@ -1,6 +1,14 @@
 /*
 Theme Name: custom-theme
-Author: Tapan
+Author:Tapan Chudasama
+Description: DESIGNfly Theme created as a part of rtCamp Assignment
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: custom-theme
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
 */
 html {
 	line-height: 1.15; /* 1 */
@@ -1022,6 +1030,7 @@ object {
 @media (min-width: 992px) {
 	.container {
 		width: 970px;
+
 	}
 }
 @media (min-width: 1200px) {
@@ -1045,7 +1054,8 @@ object {
 	color: #e73d2d;
 	background-position: 50%;
 	background-repeat: no-repeat;
-	background-image: url("http://localhost/testsite/wp-content/uploads/2019/09/slider-image.png");
+	/*Change web address */
+	background-image: url("http://54.158.208.167/wp-content/uploads/2019/09/slider-image.png");
 	background-size: cover;
 	width: auto;
 	height: 544px;
@@ -1177,11 +1187,17 @@ object {
 	width: 30%;
 	position: static !important;
 }
+@media only screen and (max-width:767px)
+{
+	#secondary {
+		display: none;
+	}
+}
 .widget {
 	padding-bottom: 3em;
 }
 #secondary ul{
-	font-family: "Open Sans Semibold";
+	font-family: "Open Sans Semibold", serif;
 	font-size: 13px;
 	color: #62585f;
 	list-style: none;
@@ -1417,4 +1433,9 @@ footer.entry-footer .comments-link{
 }
 .portfolio-buttons:hover{
 	background-color: #ef4634;
+}
+h3.category-select{
+	font-family: "Open Sans";
+	color: #62585f;
+	font-size: 14px;
 }

@@ -1,14 +1,16 @@
 <?php
 /**
- * The template for displaying comments
+ * Template for displaying comments
  *
- * This is the template that displays the area of the page that contains both the current comments
- * and the comment form.
+ * PHP Version 7
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package DESIGNfly
- */
+ * @category File
+ * @package  WordPress
+ * @author   Tapan Chudasama <tapan9740@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     http://localhost/testsite/
+ * Version: 1.0
+ **/
 
 /*
  * If the current post is protected by a password and
@@ -33,14 +35,22 @@ if ( post_password_required() ) {
 				printf(
 					/* translators: 1: title. */
 					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'designfly' ),
-					'<span>' . get_the_title() . '</span>'
+					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
 			} else {
-				printf( // WPCS: XSS OK.
+				printf(
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $designfly_comment_count, 'comments title', 'designfly' ) ),
+					esc_html(
+						_nx(
+							'%1$s thought on &ldquo;%2$s&rdquo;',
+							'%1$s thoughts on &ldquo;%2$s&rdquo;',
+							$designfly_comment_count,
+							'comments title',
+							'designfly'
+						)
+					),
 					number_format_i18n( $designfly_comment_count ),
-					'<span>' . get_the_title() . '</span>'
+					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
 			}
 			?>
@@ -50,10 +60,12 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-			wp_list_comments( array(
-				'style'      => 'ol',
-				'short_ping' => true,
-			) );
+			wp_list_comments(
+				array(
+					'style'      => 'ol',
+					'short_ping' => true,
+				)
+			);
 			?>
 		</ol><!-- .comment-list -->
 
